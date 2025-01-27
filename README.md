@@ -5,6 +5,8 @@ This is Python-based password manager script provides a secure way to store and 
 
 To run the project, use the following commands:
     >_
+
+```bash
         git clone https://github.com/KunalDharme/Password-Manager.git 
         cd Password-Manager
         pip install -r requirements.txt
