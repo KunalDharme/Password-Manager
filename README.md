@@ -1,7 +1,16 @@
 # Password-Manager
 This is Python-based password manager script provides a secure way to store and retrieve passwords using encryption.
 
+## Usage
 
+To run the project, use the following commands:
+    >_
+        git clone https://github.com/KunalDharme/Password-Manager.git 
+        cd Password-Manager
+        pip install -r requirements.txt
+        python3 id-pass.py
+
+   
 How To Use Password-Manager ?
     Here’s a quick guide to using your password manager:
 
@@ -17,6 +26,3 @@ How To Use Password-Manager ?
     5. Exit: When you’re done, choose 5 to save your data and exit.
 
     [NOTE : Remember, don’t forget your master password—you need it to access your passwords! ]
-
-
-
