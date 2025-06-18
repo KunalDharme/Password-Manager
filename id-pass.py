@@ -28,7 +28,7 @@ def generate_key():
 
 def load_key():
     if not os.path.exists(KEY_FILE):
-        print("[!] Key file not found. Generating a new one...", style="bold red on black")
+        print(Fore.LIGHTRED_EX + "[!] Key file not found. Generating a new one...")
         generate_key()
     with open(KEY_FILE, "rb") as file:
         return file.read()
