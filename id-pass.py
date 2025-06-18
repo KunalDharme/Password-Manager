@@ -13,17 +13,28 @@ from datetime import datetime
 from prompt_toolkit import prompt
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.filters import Condition
+import platform
 
 init(autoreset=True)
 
-PASSWORD_FILE = "passwords.enc"
-KEY_FILE = "secret.key"
-MASTER_PASSWORD_FILE = "master_password.enc"
+PASSWORD_FILE = ".passwords.enc"
+KEY_FILE = ".secret.key"
+MASTER_PASSWORD_FILE = ".master_password.enc"
+
+def hide_file(filepath):
+    if platform.system() == "Windows":
+        import ctypes
+        FILE_ATTRIBUTE_HIDDEN = 0x02
+        try:
+            ctypes.windll.kernel32.SetFileAttributesW(filepath, FILE_ATTRIBUTE_HIDDEN)
+        except Exception as e:
+            print(Fore.RED + f"[!] Could not hide file: {filepath} - {e}")
 
 def generate_key():
     key = Fernet.generate_key()
     with open(KEY_FILE, "wb") as file:
         file.write(key)
+    hide_file(KEY_FILE)
     print(Fore.GREEN + "Encryption key generated and saved.")
 
 def load_key():
@@ -42,6 +53,7 @@ def decrypt_password(encrypted_password, fernet):
 def save_passwords(data):
     with open(PASSWORD_FILE, "wb") as file:
         file.write(data)
+    hide_file(PASSWORD_FILE)
 
 def load_passwords():
     if not os.path.exists(PASSWORD_FILE):
@@ -78,6 +90,7 @@ def setup_master_password(fernet):
         encrypted_master = encrypt_password(master_password, fernet)
         with open(MASTER_PASSWORD_FILE, "wb") as file:
             file.write(encrypted_master)
+        hide_file(MASTER_PASSWORD_FILE)
         print(Fore.GREEN + "[✓] Master password set successfully!\n")
         break
 
@@ -131,11 +144,11 @@ def type_effect(text, delay=0.04):
 
 def display_menu():
     print(Fore.LIGHTWHITE_EX + "\n >_ Enter Your Choice")
-    print(Fore.BLUE + "1. Add a new Account, ID, and password")
-    print(Fore.BLUE + "2. Retrieve a password")
-    print(Fore.BLUE + "3. Delete an entry")
-    print(Fore.BLUE + "4. View all stored Accounts and IDs")
-    print(Fore.LIGHTBLUE_EX + "5. Edit an existing password")  
+    print(Fore.LIGHTBLUE_EX + "1. Add a new Account, ID, and password")
+    print(Fore.LIGHTBLUE_EX + "2. Retrieve a password")
+    print(Fore.LIGHTBLUE_EX + "3. Delete an entry")
+    print(Fore.LIGHTBLUE_EX + "4. View all stored Accounts and IDs")
+    print(Fore.BLUE + "5. Edit an existing password")  
     print(Fore.RED + "6. Exit")  
 
 def get_masked_input(prompt_text):
