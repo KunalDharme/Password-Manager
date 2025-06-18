@@ -1,2 +1,5 @@
 cryptography
+pyfiglet
+termcolor
 colorama
+prompt_toolkit
