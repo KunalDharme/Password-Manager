@@ -35,7 +35,7 @@ def generate_key():
     with open(KEY_FILE, "wb") as file:
         file.write(key)
     hide_file(KEY_FILE)
-    print(Fore.GREEN + "Encryption key generated and saved.")
+    print(Fore.GREEN + "Encryption key generated and saved.\n")
 
 def load_key():
     if not os.path.exists(KEY_FILE):
