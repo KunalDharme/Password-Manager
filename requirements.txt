@@ -3,4 +3,3 @@ pyfiglet
 termcolor
 colorama
 prompt_toolkit
-platform
