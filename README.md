@@ -5,7 +5,7 @@ This is a Python-based password manager script provides a secure way to store an
 
 <table>
 <tr>
-<td align="center"><b>✅ First-Time Setup</b><br><img src="assets/setup_success.png" width="400"/></td>
+<td align="center"><b>✅ First-Time Setup</b><br><img src="assets/setup_success.png" width="800"/></td>
 <td align="center"><b>❌ Incorrect Login Attempt</b><br><img src="assets/incorrect_password.png" width="400"/></td>
 </tr>
 </table>
