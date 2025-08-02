@@ -10,8 +10,6 @@ This is a Python-based password manager script provides a secure way to store an
 </tr>
 </table>
 
----
-
 ## 🚀 Features
 
 - AES-encrypted password storage 🔒  
@@ -34,7 +32,8 @@ python3 id-pass.py
 ```
    
 ### How To Use Password-Manager ?
-    
+
+```
 Here is a quick guide to using your password manager:
     1. Set up a Master Password: The first time you run it, you'll set a master password. This is used to protect your passwords.
     2. Login: After that, you will need to enter your master password to access the program.
@@ -48,13 +47,10 @@ Here is a quick guide to using your password manager:
     5. Exit: When you are done, choose 5 to save your data and exit.
 
 ⚠️ NOTE : Remember, do not forget your master password—you need it to access your passwords!
+```
 
----
-
-## License
+## 📜 License
 This project is licensed under the MIT License.
 
----
-
 ## Author
-Developed by Kunal Dharme.
+![Developed by Kunal Dharme](https://img.shields.io/badge/Developed%20by-Kunal%20Dharme-8e44ad?style=flat-square)
